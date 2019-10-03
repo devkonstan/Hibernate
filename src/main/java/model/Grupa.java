@@ -1,3 +1,5 @@
+package model;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,7 @@ public class Grupa {
 
     @Override
     public String toString() {
-        return "Grupa{" +
+        return "model.Grupa{" +
                 "id=" + id +
                 ", nazwa='" + nazwa + '\'' +
                 '}';

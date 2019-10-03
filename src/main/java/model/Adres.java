@@ -1,3 +1,5 @@
+package model;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -57,7 +59,7 @@ public class Adres {
 
     @Override
     public String toString() {
-        return "Adres{" +
+        return "model.Adres{" +
                 "id=" + id +
                 ", miasto='" + miasto + '\'' +
                 ", ulica='" + ulica + '\'' +

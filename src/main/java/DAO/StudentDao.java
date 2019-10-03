@@ -1,7 +1,11 @@
+package DAO;
+
+import model.Session;
+import model.Student;
 
 import java.util.List;
 
-public class StudentDAO extends Session implements iStudentDAO {
+public class StudentDao extends Session implements iStudentDao {
 
     @Override
     public void persist(Student student) {

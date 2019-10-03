@@ -1,6 +1,11 @@
+package DAO;
+
+import model.Student;
+import model.iSession;
+
 import java.util.List;
 
-public interface iStudentDAO extends iSession {
+public interface iStudentDao extends iSession {
 
     void persist(Student student);
 

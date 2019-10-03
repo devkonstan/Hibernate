@@ -1,5 +1,10 @@
+import model.Adres;
+import model.Grupa;
+import model.Student;
+import model.Wykladowca;
+import service.StudentService;
+
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -71,13 +76,13 @@ public class Main {
         System.out.println("by group" + studentService.getStudentByGroup("biblijna"));
 
 
-//        Student fromDB = studentService.getById(3);
+//        model.Student fromDB = studentService.getById(3);
 //        fromDB.setNazwisko("Psikuta");
 //        studentService.update(fromDB);
 //        System.out.println(studentService.getAll());
 
-//        WykladowcaService wykladowcaService = new WykladowcaService();
-//        Wykladowca wykladowca = new Wykladowca();
+//        service.WykladowcaService wykladowcaService = new service.WykladowcaService();
+//        model.Wykladowca wykladowca = new model.Wykladowca();
 //        wykladowca.setImie("Jan");
 //        wykladowca.setNazwisko("Kowalski");
 //        wykladowca.setWydzial("Humanistyczny");

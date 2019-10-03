@@ -1,6 +1,11 @@
+package DAO;
+
+import model.Session;
+import model.Wykladowca;
+
 import java.util.List;
 
-public class WykladowcaDAO extends Session implements iWykladowcaDAO {
+public class WykladowcaDao extends Session implements iWykladowcaDao {
 
     @Override
     public void persist(Wykladowca wykladowca) {

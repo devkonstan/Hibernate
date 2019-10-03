@@ -1,6 +1,11 @@
+package DAO;
+
+import model.Wykladowca;
+import model.iSession;
+
 import java.util.List;
 
-public interface iWykladowcaDAO extends iSession{
+public interface iWykladowcaDao extends iSession {
 
     void persist(Wykladowca wykladowca);
     Wykladowca getById(int id);

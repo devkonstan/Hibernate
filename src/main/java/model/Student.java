@@ -1,3 +1,8 @@
+package model;
+
+import model.Adres;
+import model.Grupa;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -118,7 +123,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "model.Student{" +
                 "id=" + id +
                 ", imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +

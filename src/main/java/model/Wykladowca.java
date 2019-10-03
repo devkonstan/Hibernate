@@ -1,3 +1,5 @@
+package model;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,7 +15,7 @@ public class Wykladowca {
     //jeden wykladowca ma wielu studentow
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "student_id")
-//    private Student student;
+//    private model.Student student;
 
     public Integer getId() {
         return id;
@@ -47,17 +49,17 @@ public class Wykladowca {
         this.wydzial = wydzial;
     }
 
-//    public Student getStudent() {
+//    public model.Student getStudent() {
 //        return student;
 //    }
 //
-//    public void setStudent(Student student) {
+//    public void setStudent(model.Student student) {
 //        this.student = student;
 //    }
 
     @Override
     public String toString() {
-        return "Wykladowca{" +
+        return "model.Wykladowca{" +
                 "id=" + id +
                 ", imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
