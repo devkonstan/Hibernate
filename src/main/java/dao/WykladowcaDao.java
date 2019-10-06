@@ -1,6 +1,6 @@
-package DAO;
+package dao;
 
-import model.Session;
+import service.Session;
 import model.Wykladowca;
 
 import java.util.List;

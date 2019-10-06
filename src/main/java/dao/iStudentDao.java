@@ -1,7 +1,7 @@
-package DAO;
+package dao;
 
 import model.Student;
-import model.iSession;
+import service.iSession;
 
 import java.util.List;
 

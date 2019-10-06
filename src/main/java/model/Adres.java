@@ -59,7 +59,7 @@ public class Adres {
 
     @Override
     public String toString() {
-        return "model.Adres{" +
+        return "Adres{" +
                 "id=" + id +
                 ", miasto='" + miasto + '\'' +
                 ", ulica='" + ulica + '\'' +

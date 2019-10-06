@@ -1,7 +1,7 @@
-package DAO;
+package dao;
 
-import model.Session;
 import model.Student;
+import service.Session;
 
 import java.util.List;
 
@@ -32,9 +32,9 @@ public class StudentDao extends Session implements iStudentDao {
 
     @Override
     public Student getByIndex(String indexNumber) {
-        String getByndexSQL = "SELECT s from Student s WHERE s.numer_indeksu =:indexNumber";
+        String getByIndexSQL = "SELECT s from Student s WHERE s.numer_indeksu =:indexNumber";
 
-        return entityManager.createQuery(getByndexSQL, Student.class)
+        return entityManager.createQuery(getByIndexSQL, Student.class)
                 .setParameter("indexNumber", indexNumber)
                 .getSingleResult();
     }
@@ -45,8 +45,6 @@ public class StudentDao extends Session implements iStudentDao {
                 .setParameter("year", year)
                 .setParameter("surname", surname)
                 .getResultList();
-
-
     }
 
     @Override
@@ -70,7 +68,6 @@ public class StudentDao extends Session implements iStudentDao {
             entityManager.createQuery("UPDATE Student s SET s.rok=rok+1 WHERE s.numer_indeksu=:numer")
                     .setParameter("numer", index)
                     .executeUpdate();
-
         }
 
     }

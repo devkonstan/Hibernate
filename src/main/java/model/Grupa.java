@@ -17,7 +17,7 @@ public class Grupa {
     private Wykladowca wykladowca;
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "grupy")
-    private List<Student> students = new ArrayList<>();
+    private List<Student> studenci_grupy = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -38,7 +38,7 @@ public class Grupa {
 
     @Override
     public String toString() {
-        return "model.Grupa{" +
+        return "Grupa{" +
                 "id=" + id +
                 ", nazwa='" + nazwa + '\'' +
                 '}';

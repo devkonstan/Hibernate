@@ -1,10 +1,11 @@
 package service;
 
-import DAO.StudentDao;
-import DAO.iStudentDao;
+import dao.StudentDao;
+import dao.iStudentDao;
 import model.Student;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 public class StudentService {
@@ -12,7 +13,7 @@ public class StudentService {
     private iStudentDao studentDao = new StudentDao();
 
     public void save(Student student) {
-        student.setNumer_indeksu(getRandomIndex());
+//        student.setNumer_indeksu(getRandomIndex());
         studentDao.openSessionWithTransaction();
         studentDao.persist(student);
         studentDao.closeSessionWithTransaction();
@@ -23,18 +24,19 @@ public class StudentService {
         return random.nextInt(899999) + 100000 + "";
     }
 
-    public Student getById(int id) {
+    public Optional<Student> getById(int id) {
         studentDao.openSessionWithTransaction();
-        Student student = studentDao.getById(id);
+        Optional<Student> studentOptional = Optional.ofNullable(studentDao.getById(id));
         studentDao.closeSessionWithTransaction();
 
-        return student;
+        return studentOptional;
     }
 
     public List<Student> getAll() {
         studentDao.openSessionWithTransaction();
         List<Student> students = studentDao.getAll();
         studentDao.closeSessionWithTransaction();
+
         return students;
     }
 
@@ -51,12 +53,12 @@ public class StudentService {
         studentDao.closeSessionWithTransaction();
     }
 
-    public Student getByIndex(String index) {
+    public Optional<Student> getByIndex(String index) {
         studentDao.openSessionWithTransaction();
-        Student student = studentDao.getByIndex(index);
+        Optional<Student> studentOptional = Optional.ofNullable(studentDao.getByIndex(index));
         studentDao.closeSessionWithTransaction();
 
-        return student;
+        return studentOptional;
     }
 
     public List<Student> getAllByYear(Integer year, String surname) {

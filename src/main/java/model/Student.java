@@ -1,8 +1,5 @@
 package model;
 
-import model.Adres;
-import model.Grupa;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +30,9 @@ public class Student {
     @JoinColumn(name = "wykladowca_id")
     private Wykladowca wykladowca;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL) //fetch domyslnie jest lazy
-    @JoinTable(name = "student_grupa", joinColumns = {
+    //fetch domyslnie jest lazy
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "grupa_studencka", joinColumns = {
             @JoinColumn(name = "student_id")},
             inverseJoinColumns = {
                     @JoinColumn(name = "grupa_id")})
@@ -123,7 +121,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "model.Student{" +
+        return "Student{" +
                 "id=" + id +
                 ", imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +

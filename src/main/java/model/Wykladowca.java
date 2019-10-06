@@ -1,6 +1,8 @@
 package model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Wykladowca {
@@ -13,9 +15,9 @@ public class Wykladowca {
     private String wydzial;
 
     //jeden wykladowca ma wielu studentow
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "student_id")
-//    private model.Student student;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_id")
+    private List<Student> studenci_wykladowcy  = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -49,17 +51,9 @@ public class Wykladowca {
         this.wydzial = wydzial;
     }
 
-//    public model.Student getStudent() {
-//        return student;
-//    }
-//
-//    public void setStudent(model.Student student) {
-//        this.student = student;
-//    }
-
     @Override
     public String toString() {
-        return "model.Wykladowca{" +
+        return "Wykladowca{" +
                 "id=" + id +
                 ", imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +

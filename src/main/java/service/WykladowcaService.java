@@ -1,8 +1,10 @@
 package service;
 
-import DAO.WykladowcaDao;
-import DAO.iWykladowcaDao;
+import dao.WykladowcaDao;
+import dao.iWykladowcaDao;
 import model.Wykladowca;
+
+import java.util.List;
 
 public class WykladowcaService {
 
@@ -20,5 +22,13 @@ public class WykladowcaService {
         wykladowcaDao.closeSessionWithTransaction();
 
         return wykladowca;
+    }
+
+    public List<Wykladowca> getAll() {
+        wykladowcaDao.openSessionWithTransaction();
+        List<Wykladowca> profesors = wykladowcaDao.getAll();
+        wykladowcaDao.closeSessionWithTransaction();
+
+        return profesors;
     }
 }
